@@ -13,11 +13,11 @@ public class adopcion implements Serializable {
     private Integer id_adopcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_familia", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_familia", referencedColumnName = "id", insertable = true, updatable = false)
     private familia id_familia;
 
     @ManyToOne
-    @JoinColumn(name = "id_animal", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "id_animal", referencedColumnName = "id", insertable = true, updatable = false)
     private animales id_animal;
 
     public adopcion() { }
