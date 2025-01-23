@@ -116,13 +116,12 @@ public class animalDAOImpl implements animalDAO {
     }
 
     /**
-     *
      * @param especie
      *
      * @return Retorna una lista de animales de la especie indicada
      */
     @Override
-    public void consultarAnimales(especies especie) {
+    public List<animales> consultarAnimales(especies especie) {
 
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
@@ -135,6 +134,7 @@ public class animalDAOImpl implements animalDAO {
             System.out.println(animal.toString());
         }
 
+        return animales;
     }
 
     /**
@@ -184,5 +184,7 @@ public class animalDAOImpl implements animalDAO {
         session.beginTransaction();
         session.update(animal);
         session.getTransaction().commit();
+
+        System.out.println("Animal después de la actualización: " + animal);
     }
 }

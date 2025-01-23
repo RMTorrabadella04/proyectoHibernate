@@ -1,6 +1,9 @@
 package DAO;
 
+import entities.animales;
 import entities.especies;
+
+import java.util.List;
 
 public interface animalDAO {
 
@@ -11,12 +14,10 @@ public interface animalDAO {
     public void insertarAnimal();
 
     /**
-     *
      * @param especie
-     *
      * @return Retorna una lista de animales de la especie indicada
      */
-    public void consultarAnimales(especies especie);
+    public List<animales> consultarAnimales(especies especie);
 
     /**
      *
